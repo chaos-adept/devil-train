@@ -1,0 +1,3 @@
+[submodule "citrus/citrus-engine"]
+	path = citrus/citrus-engine
+	url = https://github.com/alamboley/Citrus-Engine.git

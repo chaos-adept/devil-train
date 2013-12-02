@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+	
+    dependencies {
+        classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.7.1'
+    }
+	
+}
+
+apply plugin: 'gradlefx'
+apply plugin: 'ideafx'
+apply plugin: 'flashbuilder'
+
+ext.ideaFxModuleSdkName = 'flex_sdk_4.6.0'
+
+flexHome = System.getenv()['FLEX_HOME']
+
+type = 'swc'
+
+srcDirs = [
+	'citrus-engine/src/citrus/core/',
+	'citrus-engine/src/citrus/datastructures',
+	'citrus-engine/src/citrus/events',
+	'citrus-engine/src/citrus/input',
+	'citrus-engine/src/citrus/math',
+	'citrus-engine/src/citrus/objects',
+	'citrus-engine/src/citrus/physics',
+	'citrus-engine/src/citrus/sounds',
+	'citrus-engine/src/citrus/system',
+	'citrus-engine/src/citrus/ui/inventory',
+	'citrus-engine/src/citrus/utils',
+	'citrus-engine/srclib/dragonBones',
+	'citrus-engine/src/citrus/view',
+	'citrus-engine/src/citrus/core/starling',
+	'citrus-engine/src/citrus/input/controllers/starling',
+	'citrus-engine/src/citrus/utils/objectmakers/ObjectMakerStarling.as',
+	'citrus-engine/src/citrus/view/starlingview',
+	'citrus-engine/srclib/starling',
+	'citrus-engine/srclib/dragonBones'
+]
+
+dependencies {
+	internal fileTree(dir: "citrus/bin/lib/", include: '*.swc')
+}
+
+frameworkLinkage = 'none'
