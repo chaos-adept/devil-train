@@ -17,16 +17,11 @@ ext.ideaFxModuleSdkName = 'flex_sdk_4.6.0'
 
 flexHome = System.getenv()['FLEX_HOME']
 
-type = 'swc'
+type = 'swf'
 
-srcDirs = [
-	'citrus-engine/src/',
-	'citrus-engine/srclib'
-]
+frameworkLinkage = 'none' 
 
 dependencies {
-	internal fileTree(dir: "citrus-engine/lib/", include: '*.swc')
-	external fileTree(dir: "../lib/", include: '*.swc')
+	merged fileTree(dir: "${projectDir}/libs", include: '*.swc')
+    merged project(':citrus')
 }
-
-frameworkLinkage = 'none'
