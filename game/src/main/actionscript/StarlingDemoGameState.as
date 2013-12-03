@@ -17,6 +17,14 @@ import citrus.objects.platformer.simple.Sensor;
 import citrus.objects.platformer.simple.StaticObject;
 import citrus.physics.simple.SimpleCitrusSolver;
 
+import flash.display.Bitmap;
+
+import objects.Player;
+
+import starling.textures.Texture;
+
+import starling.textures.TextureAtlas;
+
 public class StarlingDemoGameState extends StarlingState {
 
 
@@ -35,15 +43,23 @@ public class StarlingDemoGameState extends StarlingState {
 
         add(new StaticObject("platform", {x:0, y:300, width:30000, height:10}));
 
-        var hero:Hero = new Hero("hero", {x:210, y:100, width:30, height:30});
-        add(hero);
+//        var hero:Hero = new Hero("hero", {x:210, y:100, width:30, height:30});
+//        add(hero);
+
+
+
+
+
+        var player:Player = new Player("player", {x:110, y:100, width:30, height:30});
+        AssetStore.decoratePlayer(player);
+        add(player);
 //
 //        var sensor:Sensor = new Sensor("sensor", {x:220, y:150, width:30, height:30});
 //        add(sensor);
 
-        hero.onCollide.add(_collisionStart);
-        hero.onPersist.add(_collisionPersist);
-        hero.onSeparate.add(_collisionEnd);
+//        hero.onCollide.add(_collisionStart);
+//        hero.onPersist.add(_collisionPersist);
+//        hero.onSeparate.add(_collisionEnd);
     }
 
     private function _collisionStart(self:CitrusSprite, other:CitrusSprite, normal:MathVector, impact:Number):void {
