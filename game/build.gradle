@@ -13,15 +13,19 @@ apply plugin: 'gradlefx'
 apply plugin: 'ideafx'
 apply plugin: 'flashbuilder'
 
-ext.ideaFxModuleSdkName = 'flex_sdk_4.6.0'
+ext.ideaFxModuleSdkName = 'air_sdk_3.9'
 
 flexHome = System.getenv()['FLEX_HOME']
 
-type = 'swf'
+type = 'mobile'
 
 frameworkLinkage = 'none' 
 
 dependencies {
 	merged fileTree(dir: "${projectDir}/libs", include: '*.swc')
     merged project(':citrus')
+}
+
+air {
+    storepass 'bi-lingvo-games'
 }

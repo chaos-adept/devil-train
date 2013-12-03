@@ -2,6 +2,8 @@ package {
     import citrus.core.starling.StarlingCitrusEngine;
 import citrus.core.starling.ViewportMode;
 
+import flash.display3D.Context3DProfile;
+
 import flash.events.Event;
 
 
@@ -19,8 +21,9 @@ public class Main extends StarlingCitrusEngine {
 
     override protected function handleAddedToStage(e:Event):void {
         super.handleAddedToStage(e);
-        setUpStarling(true);
+//        setUpStarling(true);
 
+        setUpStarling(true);
     }
 
     override public function handleStarlingReady():void {
