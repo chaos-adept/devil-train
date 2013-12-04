@@ -10,6 +10,11 @@ import citrus.view.starlingview.AnimationSequence;
 
 import flash.display.Bitmap;
 
+import objects.GroundBackground;
+
+import starling.display.Image;
+import starling.display.Sprite;
+
 import starling.textures.Texture;
 
 import starling.textures.TextureAtlas;
@@ -21,6 +26,8 @@ public class AssetStore {
     [Embed(source="../../../assets/devil/devil-animation.png")]
     private static const _heroPng:Class;
 
+    [Embed(source="../../../assets/ground/ground_processed.png")]
+    public static const groundBackground:Class;
 
     public function AssetStore() {
     }
@@ -37,6 +44,23 @@ public class AssetStore {
         animSequence.mcSequences["Girl"].loop = true;
         hero.view = animSequence;
 
+    }
+
+    public static function decorateGround(ground:GroundBackground):void {
+        var imgContainer:Sprite = new Sprite();
+
+        var imgSrc:Bitmap = new groundBackground;
+
+        var texture:Texture = Texture.fromBitmap(imgSrc);
+        var img1:Image = new Image(texture);
+        img1.y = -img1.height
+        imgContainer.addChild(img1);
+
+        var img2:Image = new Image(texture);
+
+        imgContainer.addChild(img2);
+        imgContainer.y = 0;
+        ground.view = imgContainer;
     }
 }
 }

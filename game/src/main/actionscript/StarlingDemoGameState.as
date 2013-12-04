@@ -19,6 +19,8 @@ import citrus.physics.simple.SimpleCitrusSolver;
 
 import flash.display.Bitmap;
 
+import objects.GroundBackground;
+
 import objects.Player;
 
 import starling.textures.Texture;
@@ -48,11 +50,15 @@ public class StarlingDemoGameState extends StarlingState {
 
 
 
-
+        var ground:GroundBackground = new GroundBackground("ground", {x:0, y:0, width:320, height:480})
+        AssetStore.decorateGround(ground);
+        add(ground);
 
         var player:Player = new Player("player", {x:110, y:100, width:30, height:30});
         AssetStore.decoratePlayer(player);
         add(player);
+
+
 //
 //        var sensor:Sensor = new Sensor("sensor", {x:220, y:150, width:30, height:30});
 //        add(sensor);

@@ -7,7 +7,7 @@ import flash.display3D.Context3DProfile;
 import flash.events.Event;
 
 
-[SWF(width="320", height="480", frameRate="60")]
+[SWF(width="320", height="480", frameRate="60", backgroundColor="#000000")]
 public class Main extends StarlingCitrusEngine {
 
 
