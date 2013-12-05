@@ -36,6 +36,14 @@ public class Player extends CitrusSprite {
         if (_ce.input.isDoing("right", inputChannel)) {
             _velocity.x += acceleration;
         }
+
+        if (_ce.input.isDoing("up",inputChannel)) {
+            _velocity.y -= acceleration;
+        }
+
+        if (_ce.input.isDoing("down", inputChannel)) {
+            _velocity.y += acceleration;
+        }
     }
 
 }
