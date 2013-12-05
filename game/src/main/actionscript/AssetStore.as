@@ -11,6 +11,7 @@ import citrus.view.starlingview.AnimationSequence;
 import flash.display.Bitmap;
 
 import objects.GroundBackground;
+import objects.Train;
 
 import starling.display.Image;
 import starling.display.Sprite;
@@ -28,6 +29,9 @@ public class AssetStore {
 
     [Embed(source="../../../assets/ground/ground_processed.png")]
     public static const groundBackground:Class;
+
+    [Embed(source="../../../assets/train/processed.png")]
+    public static const TrainClass:Class;
 
     public function AssetStore() {
     }
@@ -61,6 +65,14 @@ public class AssetStore {
         imgContainer.addChild(img2);
         imgContainer.y = 0;
         ground.view = imgContainer;
+    }
+
+    public static function decorateTrain(train:Train):void {
+        var imgSrc:Bitmap = new TrainClass;
+
+        var texture:Texture = Texture.fromBitmap(imgSrc);
+        var trainImg:Image = new Image(texture);
+        train.view = trainImg;
     }
 }
 }

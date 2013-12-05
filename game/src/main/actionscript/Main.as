@@ -7,13 +7,13 @@ import flash.display3D.Context3DProfile;
 import flash.events.Event;
 
 
-[SWF(width="320", height="480", frameRate="60", backgroundColor="#000000")]
+[SWF(width="640", height="960", frameRate="60", backgroundColor="#000000")]
 public class Main extends StarlingCitrusEngine {
 
 
     public function Main() {
-        _baseWidth = 320;
-        _baseHeight = 480;
+        _baseWidth = Cnst.BASE_WIDTH;
+        _baseHeight = Cnst.BASE_HEIGHT;
         _viewportMode = ViewportMode.FULLSCREEN;
         _assetSizes = [1, 1.5, 2, 4, 5];
     }

@@ -22,6 +22,7 @@ import flash.display.Bitmap;
 import objects.GroundBackground;
 
 import objects.Player;
+import objects.Train;
 
 import starling.textures.Texture;
 
@@ -50,9 +51,13 @@ public class StarlingDemoGameState extends StarlingState {
 
 
 
-        var ground:GroundBackground = new GroundBackground("ground", {x:0, y:0, width:320, height:480})
+        var ground:GroundBackground = new GroundBackground("ground", {x:0, y:0, width:320, height:690})
         AssetStore.decorateGround(ground);
         add(ground);
+
+        var train:Train = new Train("train", {x:0, y:0, width:200, height:960});
+        AssetStore.decorateTrain(train);
+        add(train);
 
         var player:Player = new Player("player", {x:110, y:100, width:30, height:30});
         AssetStore.decoratePlayer(player);
