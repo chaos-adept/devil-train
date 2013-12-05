@@ -55,8 +55,9 @@ public class StarlingDemoGameState extends StarlingState {
         AssetStore.decorateGround(ground);
         add(ground);
 
-        var train:Train = new Train("train", {x:0, y:0, width:200, height:960});
+        var train:Train = new Train("train", {x:0, y:0, width:376, height:Cnst.BASE_HEIGHT});
         AssetStore.decorateTrain(train);
+        train.x = Cnst.BASE_WIDTH / 2 - train.width / 2;
         add(train);
 
         var player:Player = new Player("player", {x:110, y:100, width:30, height:30});
