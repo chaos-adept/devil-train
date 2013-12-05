@@ -14,5 +14,11 @@ public class Train extends CitrusSprite {
         super(name, params);
         updateCallEnabled = true;
     }
+
+
+    override public function update(timeDelta:Number):void {
+        super.update(timeDelta);
+        x += Math.round(Math.cos( new Date().getSeconds() + Math.random()*10 )  )
+    }
 }
 }
